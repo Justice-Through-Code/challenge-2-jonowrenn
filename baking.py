@@ -17,9 +17,14 @@ def print_ingredients():  # Ways to work with strings/printing
 
     # 1.3 Using one print statement, use an f-string to print the ingredients
     # as a single string (make sure to add a space between each ingredient!)
+    print(ingredient_1, ingredient_2, ingredient_3, ingredient_4)
+    print(ingredient_1 + ingredient_2 + ingredient_3 + ingredient_4)
+    print(f'{ingredient_1} {ingredient_2} {ingredient_3} {ingredient_4}')
 
 
-def confirm_ingredients():  # String methods
+def confirm_ingredients(): 
+    ingredients = (f'{ingredient_1} {ingredient_2} {ingredient_3} {ingredient_4}')
+      # String methods
     # 2.1 Save the f-string you wrote above into a variable called `ingredients`.
     
     # Aha, that's the issue! We need to use butter, not milk.
@@ -37,9 +42,15 @@ def confirm_ingredients():  # String methods
 
     # 2.7 That looks better. Let's make it official: use another string method to 
     # print the string in the `ingredients` variable in all-caps now that it's right.
+    print(ingredients.replace('milk','butter'))
+    print(ingredients.count('milk'))
+    print(ingredients)
+    ingredients = ingredients.replace('milk','butter')
+    print(ingredients)
+    print(ingredients.upper())
 
-
-def favorite_bake():  # User Input/Type conversion
+def favorite_bake():
+    # User Input/Type conversion
     # The beauty of these ingredients is that you can make tons with them. 
     # Let's get some user input to decide what to bake!
 
@@ -56,6 +67,8 @@ def favorite_bake():  # User Input/Type conversion
     # HINTS: 
     # What's missing from the first print statement to allow us to use a variable inside a string?
     # Use `type conversion` to fix the second one
-    
-    # print('Ooooh, {baked_good}s are delicious!')
-    # print(f'We recommend you eat {baked_good}s at least {frequency * 2} times a month!')
+    baked_good = input('what is your favorite baked good?')
+    frequency = input(f'Roughly how many times a month do you eat {baked_good}s?')
+    print(type(frequency))
+    print(f'Ooooh, {baked_good}s are delicious!')
+    print(f'We recommend you eat {baked_good}s at least {int(frequency) * 2} times a month!')
